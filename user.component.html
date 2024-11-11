@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<body>
+<div class="container">
+  <div class="d-flex justify-content-end mt-2"> <!-- ใช้ flexbox จัดปุ่มไปมุมขวาบน -->
+      <button class="btn-2" (click)="login()">Login</button> <!-- ปุ่ม Login -->
+      <button class="btn-3" (click)="register()">register</button> <!-- ปุ่ม สมัครสมาชิก -->
+  </div>
+
+  <h2>🌸✧･ﾟ: *✧ ☁️ ❀ รายการโซนตั้งบูธ ❀ ☁️ ✧* :･ﾟ✧🌸</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID โซน</th>
+        <th>รหัสโซน</th>
+        <th>ชื่อโซน</th>
+        <th>ข้อมูลโซน</th>
+        <th>จำนวนบูธ</th>
+        <th>ข้อมูลบูธภายในโซน</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.project_id }}</td>
+        <td>{{ project.project_code }}</td>
+        <td>{{ project.project_name }}</td>
+        <td>{{ project.project_info }}</td>
+        <td>{{ project.total_booths }}</td>
+        <td>
+          <button (click)="viewBooths(project.project_id)" class="btn btn-info">ดูบูธ</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

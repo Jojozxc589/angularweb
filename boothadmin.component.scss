@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+html, body {
+    height: 145%; /* ทำให้ความสูงเต็มที่ */
+    margin: 0; /* ลบระยะขอบ */
+}
+
+body {
+    background-color: #f5ffc9; /* สีพื้นหลังสำหรับทั้งหน้า */
+    min-height: 100vh; /* ตั้งความสูงขั้นต่ำเป็น 100% ของหน้าจอ */
+}
+
+
+.member-info {
+    background-color: #ffffff; /* สีพื้นหลังสำหรับสมาชิก */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติ */
+}
+
+.container {
+    background-color: #ffffff; /* สีพื้นหลังสำหรับคอนเทนเนอร์ */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* เว้นระยะห่างจากด้านบน */
+}
+
+
+.container {
+    max-width: 1000px; /* ขนาดสูงสุดของคอนเทนเนอร์ */
+    margin: 30px auto; /* จัดกลาง */
+    padding: 30px; /* ช่องว่างด้านใน */
+    background-color: #f9f2e1; /* สีพื้นหลังของคอนเทนเนอร์ */
+    border-radius: 15px; /* ขอบมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เงาที่ชัดเจนขึ้น */
+    position: relative; /* เพื่อให้สามารถใช้ตำแหน่งได้ */
+}
+
+.member-info {
+    position: fixed; /* ใช้ตำแหน่งแบบคงที่ */
+    top: 20px; /* ปรับตำแหน่งจากด้านบน */
+    right: 10px; /* ปรับตำแหน่งจากด้านขวา */
+    background-color: #ffea97; /* สีพื้นหลัง */
+    border: 1px solid #dee2e6; /* กรอบ */
+    border-radius: 20px; /* มุมโค้ง */
+    padding: 10px; /* ช่องว่างภายใน */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เงา */
+    z-index: 10; /* ทำให้แน่ใจว่าส่วนนี้อยู่เหนือเนื้อหาอื่นๆ */
+    max-width: 300px; /* กำหนดขนาดสูงสุดให้กับกล่อง */
+    overflow: auto; /* เพิ่มการเลื่อนภายในถ้าจำเป็น */
+    font-family: "Itim", cursive; /* ใช้ฟอนต์ Itim */
+}
+
+
+h2 {
+    text-align: center; /* จัดกลางหัวเรื่อง */
+    margin-bottom: 20px; /* ช่องว่างด้านล่างของหัวเรื่อง */
+    color: #c94a56; /* เปลี่ยนสีให้เข้ากับธีม */
+    font-size: 32px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    text-transform: uppercase; /* ตัวพิมพ์ใหญ่ทั้งหมด */
+    padding-bottom: 10px; /* ช่องว่างด้านล่างหัวเรื่อง */
+    border-bottom: 2px solid #c94a56; /* ขอบด้านล่างเพื่อเน้น */
+}
+
+.table {
+    width: 100%; /* ทำให้ตารางกว้างเต็มคอนเทนเนอร์ */
+    border-collapse: collapse; /* รวมขอบของเซลล์ */
+    margin-top: 20px; /* ช่องว่างด้านบนตาราง */
+}
+
+.table th, .table td {
+    padding: 15px; /* ช่องว่างด้านในเซลล์ */
+    text-align: center; /* จัดข้อความให้ชิดซ้าย */
+    border: 3px solid #b9a021; /* ขอบเซลล์ */
+}
+
+.table th {
+    text-align: center;
+    background-color: #ff6f61; /* สีพื้นหลังของหัวตาราง */
+    color: white; /* สีของข้อความในหัวตาราง */
+    font-size: 20px; /* ขนาดตัวอักษร */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f7f7f7; /* สีพื้นหลังของแถวที่เป็นเลขคู่ */
+}
+
+.table tbody tr:hover {
+    background-color: #f4cccc; /* สีพื้นหลังเมื่อเลื่อนเมาส์ */
+}
+
+.btn {
+    padding: 12px 20px; /* ช่องว่างในปุ่ม */
+    background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีข้อความในปุ่ม */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 80px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อเลื่อนเมาส์ */
+    transition: background-color 0.3s, transform 0.2s; /* เอฟเฟ็กต์เปลี่ยนสีเมื่อเลื่อนเมาส์ */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    margin-top: 10px; /* ช่องว่างด้านบนปุ่ม */
+}
+
+.btn:hover {
+    background-color: #c94a56; /* สีพื้นหลังของปุ่มเมื่อเลื่อนเมาส์ */
+    transform: scale(1.05); /* ขยายขนาดปุ่มเมื่อเลื่อนเมาส์ */
+}
+
+.footer {
+    text-align: center; /* จัดกลางข้อความในฟุตเตอร์ */
+    margin-top: 30px; /* ช่องว่างด้านบนของฟุตเตอร์ */
+    padding: 20px; /* ช่องว่างด้านในฟุตเตอร์ */
+    background-color: #f1f1f1; /* สีพื้นหลังของฟุตเตอร์ */
+    border-radius: 5px; /* ขอบมน */
+    color: #555; /* สีข้อความในฟุตเตอร์ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+}
+
+.icon {
+    position: absolute; /* ใช้ตำแหน่งแบบสัมพัทธ์ */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    right: 20px; /* ระยะห่างจากด้านขวา */
+    width: 50px; /* ขนาดของไอคอน */
+}
+
+.btn-1,
+.btn-1 *,
+.btn-1 :after,
+.btn-1 :before,
+.btn-1:after,
+.btn-1:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.btn-1 {
+  scale: 0.5;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  color: #ff6f61;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-1:disabled {
+  cursor: default;
+}
+
+.btn-1:-moz-focusring {
+  outline: auto;
+}
+
+.btn-1 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-1 [hidden] {
+  display: none;
+}
+
+.btn-1 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-1 .original {
+    background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+  color: #ffffff;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-1:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-1 .letters {
+  display: inline-flex;
+}
+
+.btn-1 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+}
+
+.btn-1 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-1:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-1:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-1:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-1:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-1:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-1:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}

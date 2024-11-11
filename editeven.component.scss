@@ -1,0 +1,183 @@
+$halloween-orange: #ff6b01;
+$dark-purple: #2c1810;
+$ghost-white: #f8f8ff;
+$pumpkin-brown: #8B4513;
+
+body {
+    background-color: #ffe8c9; /* สีพื้นหลังสำหรับทั้งหน้า */
+    min-height: 100vh; /* ตั้งความสูงขั้นต่ำเป็น 100% ของหน้าจอ */
+}
+.error-message {
+  background-color: rgba($halloween-orange, 0.1);
+  border: 2px solid $halloween-orange;
+  color: $halloween-orange;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(135deg, $dark-purple, darken($halloween-orange, 25%));
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin: 2rem 0;
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba($halloween-orange, 0.2);
+  }
+
+  th {
+    background-color: $dark-purple;
+    color: $halloween-orange;
+    font-family: 'Creepster', cursive;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    &:first-child {
+      border-top-left-radius: 15px;
+    }
+    
+    &:last-child {
+      border-top-right-radius: 15px;
+    }
+  }
+
+  td {
+    color: $ghost-white;
+    transition: background-color 0.3s ease;
+  }
+
+  tr:hover td {
+    background-color: rgba($halloween-orange, 0.1);
+  }
+
+  button {
+    background-color: $halloween-orange;
+    color: $ghost-white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+
+    &:hover {
+      background-color: darken($halloween-orange, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($halloween-orange, 0.4);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    
+    th, td {
+      padding: 0.8rem;
+    }
+  }
+}
+.btn-1 {
+    scale: 0.5;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: $dark-purple;
+    background-image: none;
+    color: $halloween-orange;
+    cursor: pointer;
+    font-family: 'Creepster', cursive;
+    font-size: 120%;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient($dark-purple, $ghost-white);
+    padding: 0;
+    border: 2px solid $halloween-orange;
+    border-radius: 999px;
+    box-sizing: border-box;
+    display: block;
+    font-weight: 900;
+    overflow: hidden;
+    padding: 1.2rem 3rem;
+    position: relative;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba($halloween-orange, 0.3);
+    transition: all 0.3s ease;
+  
+    &:disabled {
+      cursor: default;
+      opacity: 0.6;
+    }
+  
+    &:-moz-focusring {
+      outline: auto;
+    }
+  
+    svg {
+      display: block;
+      vertical-align: middle;
+    }
+  
+    [hidden] {
+      display: none;
+    }
+  
+    .original {
+      background-color: $halloween-orange;
+      color: $ghost-white;
+      display: grid;
+      inset: 0;
+      place-content: center;
+      position: absolute;
+      transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba($halloween-orange, 0.5);
+      
+      .original {
+        transform: translateY(100%);
+      }
+    }
+  
+    .letters {
+      display: inline-flex;
+    }
+  
+    span {
+      opacity: 0;
+      transform: translateY(-15px);
+      transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+      color: $ghost-white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  
+      &:nth-child(2n) {
+        transform: translateY(15px);
+      }
+    }
+  
+    &:hover span {
+      opacity: 1;
+      transform: translateY(0);
+  
+      @for $i from 2 through 6 {
+        &:nth-child(#{$i}) {
+          transition-delay: #{($i - 1) * 0.1}s;
+        }
+      }
+    }
+  }
+  

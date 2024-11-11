@@ -1,0 +1,52 @@
+<h2 mat-dialog-title style="text-align: center; font-family: 'Itim', cursive; color: #001eff; background-color: #82bcec; padding: 10px; font-size: 30px; text-shadow: 3px 3px 5px rgba(192, 118, 0, 0.7);">แก้ไขข้อมูลโซน</h2>
+
+<div mat-dialog-content [ngStyle]="{'background-image': 'url(assets/OIP3.jpg)', 'background-size': 'cover', 'background-position': 'center'}">
+  <mat-form-field>
+    <mat-label>ชื่อโซน</mat-label>
+    <input matInput [(ngModel)]="project.project_name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>จำนวนโซน</mat-label>
+    <input matInput [(ngModel)]="project.total_booths" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>รายละเอียดโซน</mat-label>
+    <textarea matInput [(ngModel)]="project.project_info"></textarea>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions style="background-color: #82bcec;">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <div id="dialog-button" (click)="onSaveClick()">Save</div>
+</div>
+<script type="text/javascript">
+    const overlay = document.querySelector(".overlay");
+    const menu = document.querySelector("#menu");
+    const links = document.querySelector(".links");
+
+    const handleClick = (buttonId) => {
+      menu.classList = [];
+      menu.classList.add(buttonId);
+      setTimeout(() => {
+        document.body.classList.add("menu-active");
+      }, 100);
+    };
+
+    menu.addEventListener("click", () => {
+      document.body.classList.remove("menu-active");
+
+      setTimeout(() => {
+        menu.classList = [];
+      }, 400);
+    });
+
+    links.addEventListener("click", () => {
+      document.body.classList.remove("menu-active");
+
+      setTimeout(() => {
+        menu.classList = [];
+      }, 400);
+    });
+  </script>

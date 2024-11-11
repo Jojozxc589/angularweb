@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.payment-confirmation {
+  text-align: center;
+  margin: 20px auto;
+  font-family: 'Itim', cursive;
+  background-image: linear-gradient(135deg, #ffebc5, #fff3cd);
+  padding: 40px 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideIn 0.5s ease;
+  border: 5px solid #ff9800;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h2 {
+    color: #856404;
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .member-info {
+    background-color: #fff;
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid #ff9800;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #ffe8b0;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 18px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #856404;
+      }
+    }
+  }
+
+  .container {
+    h2 {
+      margin-top: 30px;
+      color: #856404;
+      font-size: 28px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.5s ease;
+    }
+
+    .booth-details {
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #ffeeba;
+      border: 5px solid #ff9800;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, background-color 0.3s;
+
+      &:hover {
+        transform: scale(1.02);
+        background-color: #ffe7a2;
+      }
+
+      h3 {
+        color: #856404;
+        margin-bottom: 10px;
+        font-size: 22px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 16px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #856404;
+        }
+      }
+    }
+
+    .upload-slip {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #856404;
+        animation: fadeIn 0.5s ease;
+      }
+
+      input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #ffca2c;
+          outline: none;
+        }
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #ffca2c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+          background-color: #ffc107;
+          transform: scale(1.05);
+        }
+      }
+
+      p {
+        color: #dc3545;
+        font-weight: bold;
+      }
+    }
+
+    .payment-section {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+
+      button {
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+          background-color: #5a6268;
+          transform: scale(1.05);
+        }
+
+        &.confirm-button {
+          background-color: #28a745;
+
+          &:hover {
+            background-color: #218838;
+          }
+        }
+      }
+    }
+
+    .icon {
+      font-size: 40px;
+      margin: 10px;
+      color: #ffca2c;
+      animation: bounce 0.5s ease infinite;
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    }
+    
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #6c757d;
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .confirm-payment-button {
+      padding: 12px 24px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+      }
+    }
+
+    .success-icon {
+      font-size: 50px;
+      color: #28a745;
+      margin-bottom: 15px;
+    }
+
+    .confirmation-message {
+      color: #856404;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 10px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .progress-container {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 20px;
+
+      .progress-bar {
+        height: 100%;
+        background-color: #ffca2c;
+        width: 0%;
+        transition: width 0.5s;
+      }
+    }
+
+    .loading-animation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        animation: spin 10s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}

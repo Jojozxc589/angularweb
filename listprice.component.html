@@ -1,0 +1,123 @@
+
+<div class="backg">
+  <div class="price-list">
+    <div class="members-list"></div>
+  <button (click)="goBack()" class="btn-1">
+    <div class="original">ย้อนกลับ</div>
+    <div class="letters">
+      <span>ย้</span>
+      <span>อ</span>
+      <span>น</span>
+      <span>ก</span>
+      <span>ลั</span>
+      <span>บ</span>
+    </div>
+  </button>
+    <h2>
+      {{ viewMode === 'unpaid' ? 'รายชื่อคนยังไม่จ่าย' : 
+         viewMode === 'paid' ? 'รายชื่อคนจ่ายแล้ว' : 
+         viewMode === 'pending' ? 'รายชื่อผู้รอตรวจสอบ' :
+         'ข้อมูลบูธที่ถูกจอง' }}
+    </h2>
+  
+    <div class="button-group">
+      <button (click)="setViewMode('unpaid')">ดูรายชื่อคนยังไม่จ่าย</button>
+      <button (click)="setViewMode('paid')">ดูรายชื่อคนจ่ายแล้ว</button>
+      <button (click)="setViewMode('pending')">ดูรายชื่อผู้รอตรวจสอบ</button>
+      <button (click)="setViewMode('booked')">ดูข้อมูลบูธที่ถูกจอง</button>
+    </div>
+  
+    <table *ngIf="viewMode === 'unpaid' && unpaidBookings.length">
+      <thead>
+        <tr>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>เบอร์โทร</th>
+          <th>บูธ</th>
+          <th>โครงการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of unpaidBookings">
+          <td>{{ booking.first_name }}</td>
+          <td>{{ booking.last_name }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.booth_name }}</td>
+          <td>{{ booking.project_name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <table *ngIf="viewMode === 'paid' && paidBookings.length">
+      <thead>
+        <tr>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>เบอร์โทร</th>
+          <th>บูธ</th>
+          <th>โครงการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of paidBookings">
+          <td>{{ booking.first_name }}</td>
+          <td>{{ booking.last_name }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.booth_name }}</td>
+          <td>{{ booking.zone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <table *ngIf="viewMode === 'pending' && pendingReviews.length">
+      <thead>
+        <tr>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>เบอร์โทร</th>
+          <th>บูธ</th>
+          <th>โครงการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let review of pendingReviews">
+          <td>{{ review.first_name }}</td>
+          <td>{{ review.last_name }}</td>
+          <td>{{ review.phone }}</td>
+          <td>{{ review.booth_name }}</td>
+          <td>{{ review.zone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <table *ngIf="viewMode === 'booked' && bookedBooths.length">
+      <thead>
+        <tr>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>เบอร์โทร</th>
+          <th>บูธ</th>
+          <th>ราคา</th>
+          <th>โครงการ</th>
+          <th>สถานะ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booth of bookedBooths">
+          <td>{{ booth.first_name }}</td>
+          <td>{{ booth.last_name }}</td>
+          <td>{{ booth.phone }}</td>
+          <td>{{ booth.booth_name }}</td>
+          <td>{{ booth.price }}</td> 
+          <td>{{ booth.projects }}</td>
+          <td>{{ booth.status }}</td> 
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="viewMode === 'unpaid' && !unpaidBookings.length">No unpaid bookings found.</div>
+    <div *ngIf="viewMode === 'paid' && !paidBookings.length">No paid bookings found.</div>
+    <div *ngIf="viewMode === 'pending' && !pendingReviews.length">No pending reviews found.</div>
+    <div *ngIf="viewMode === 'booked' && !bookedBooths.length">No booked booths found.</div> 
+  </div>
+</div>

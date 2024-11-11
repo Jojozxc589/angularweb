@@ -1,0 +1,600 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); /* เปลี่ยนฟอนต์เป็น Roboto */
+
+body {
+  font-family: 'Roboto', sans-serif; /* เปลี่ยนฟอนต์ใหม่ */
+  background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเป็นสีขาว */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+::placeholder {
+  color: #9CA3AF;
+  font-style: italic;
+}
+input + .input-icon {
+  font-size: 1.2rem;
+  color: #6B7280;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CA3AF;
+  font-size: 1.25rem;
+}
+// พื้นหลัง
+.login-container {
+  font-family: 'Roboto', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  box-shadow: 0 10px 30px rgba(187, 0, 178, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin: auto; /* ทำให้กรอบอยู่ตรงกลาง */
+  min-height: 100vh;
+  
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* ตั้งพื้นหลังเป็นสีขาว */
+  z-index: -1;
+  filter: none; /* ยกเลิกการเบลอ */
+}
+
+.login-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Title styles */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: rgb(150, 11, 145);
+  z-index: 1;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: moveBubble 20s infinite ease-in-out;
+}
+
+.login-container::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: moveBubble 15s infinite ease-in-out;
+}
+/* Form container */
+form {
+  
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.293);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Input group styling */
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+  animation: slideUp 1s ease forwards;
+}
+
+label {
+  display: block;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
+  animation: fadeInLeft 1.5s ease forwards;
+}
+
+/* Input field styles */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    background-color: #F9FAFB;
+    transition: all 0.3s ease;
+}
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #8B5CF6;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styles */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  color: rgba(0, 0, 0, 0.784);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+button:hover {
+  background: linear-gradient(to right, #7C3AED, #DB2777);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.5);
+  animation: shake 0.5s ease;
+}
+
+button:focus,
+button:active {
+  outline: none;
+  transform: scale(0.98);
+  background-color: #8B5CF6;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* Error message styles */
+.error-message {
+  color: #EF4444;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 10px rgba(139, 92, 246, 1);
+  }
+  100% {
+      box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+}
+
+/* Additional enhancements */
+@keyframes growIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+input[type="email"],
+input[type="password"] {
+  animation: growIn 0.8s ease forwards;
+  box-shadow: 1 5px 10px rgba(139, 9, 179, 0.15);
+}
+@keyframes moveBubble {
+  0% {
+      transform: translate(0, 0);
+  }
+  50% {
+      transform: translate(20px, 30px);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
+}
+
+/* Adding subtle hover animations */
+.input-group:hover label {
+  color: #8B5CF6;
+}
+
+/* Responsive media queries */
+@media (max-width: 640px) {
+  .login-container {
+      padding: 1rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+      font-size: 0.9rem;
+  }
+
+  button {
+      font-size: 0.9rem;
+  }
+
+  .error-message {
+    color: #EF4444;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+}
+
+/* Background floating animations */
+@keyframes floatBackground {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.login-container:before {
+  animation: floatBackground 4s ease-in-out infinite;
+}
+
+/* Adding rotating animations to form */
+form {
+  animation: rotateIn 1.5s ease forwards;
+}
+
+@keyframes rotateIn {
+  0% {
+      opacity: 0;
+      transform: rotate(-10deg);
+  }
+  100% {
+      opacity: 1;
+      transform: rotate(0deg);
+  }
+}
+
+/* Subtle bouncing button */
+button {
+  animation: bounceIn 1.2s ease forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  60% {
+      opacity: 1;
+      transform: translateY(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Additional hover glow effect */
+button:hover {
+  background: linear-gradient(to right, #7C3AED, #DB2777);
+  transform: scale(1.05);
+}
+
+/* Subtle rotating effect on hover for inputs */
+input[type="email"]:hover,
+input[type="password"]:hover {
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  transform: rotate(1deg);
+  transition: transform 0.2s ease;
+}
+
+/* Adding transitions to the form elements */
+input[type="email"],
+input[type="password"],
+button {
+  transition: all 0.3s ease;
+}
+
+/* Adding some visual enhancements */
+form {
+  border: 2px solid #8B5CF6;
+  animation: zoomIn 0.7s ease forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+@keyframes gradientBackground {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+/* เพิ่มเอฟเฟกต์พื้นหลังแบบไล่สี */
+body {
+  animation: gradientBackground 6s ease infinite; /* เพิ่มการเคลื่อนไหวพื้นหลัง */
+}
+
+/* เอฟเฟกต์พื้นหลังที่กรอบ */
+.login-container {
+  border: 2px solid rgba(139, 92, 246, 0.5); /* เพิ่มขอบกรอบ */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กรอบ */
+}
+
+/* ปรับเอฟเฟกต์เงาเมื่อเลื่อนเมาส์ */
+.login-container:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* ปรับเปลี่ยนการแสดงผลปุ่ม */
+button {
+  border: 2px solid transparent; /* ขอบปุ่มโปร่งใส */
+  transition: background 0.3s, transform 0.2s, border-color 0.3s; /* เพิ่มการเปลี่ยนสีขอบ */
+}
+
+button:hover {
+  border-color: #EC4899; /* เปลี่ยนสีขอบเมื่อ hover */
+}
+
+/* เพิ่มเอฟเฟกต์สะท้อนสำหรับ input */
+input[type="email"],
+input[type="password"] {
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* สร้างเอฟเฟกต์การหมุนที่สวยงาม */
+.login-container:hover h2 {
+  transform: rotate(-5deg); /* หมุนชื่อเมื่อ hover */
+  transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลง */
+}
+
+/* เอฟเฟกต์พื้นหลัง */
+@keyframes gradientBackground {
+  0% {
+      background-color: #8B5CF6; /* เริ่มต้นจากสีม่วง */
+  }
+  50% {
+      background-color: #EC4899; /* กลายเป็นสีชมพู */
+  }
+  100% {
+      background-color: #8B5CF6; /* กลับไปที่สีม่วง */
+  }
+}
+
+.error-popup {
+  background-color: #ffcccc; /* สีพื้นหลังแดงอ่อน */
+  border: 2px solid #ff0000; /* ขอบสีแดง */
+  color: #ff0000; /* ข้อความสีแดง */
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // สีพื้นหลังของป๊อบอัพ
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center; // จัดข้อความให้อยู่กลาง
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+}
+
+.error-message {
+  color: red; // สีข้อความผิดพลาด
+  margin: 10px 0;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+.register-button {
+  background-color: #4CAF50; /* สีเขียว */
+  color: rgba(0, 0, 0, 0.726);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+
+}
+.register-button:hover {
+  background-color: #ffffff; /* สีเขียวเข้มเมื่อ hover */
+}
+.back-button{
+  background-color: #ffffff; /* สีเขียว */
+  color: rgba(0, 0, 0, 0.726);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+.back-button:hover{
+  background-color: #ffffff; /* สีเขียวเข้มเมื่อ hover */
+}

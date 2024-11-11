@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+html, body {
+  height: 145%; /* ทำให้ความสูงเต็มที่ */
+  margin: 0; /* ลบระยะขอบ */
+}
+
+body {
+  background-color: #f5ffc9; /* สีพื้นหลังสำหรับทั้งหน้า */
+  min-height: 100vh; /* ตั้งความสูงขั้นต่ำเป็น 100% ของหน้าจอ */
+}
+
+.container {
+  max-width: 1200px; /* ขนาดสูงสุดของคอนเทนเนอร์ */
+  margin: 30px auto; /* จัดกลาง */
+  padding: 30px; /* ช่องว่างด้านใน */
+  background-color: #f9f2e1; /* สีพื้นหลังของคอนเทนเนอร์ */
+  border-radius: 15px; /* ขอบมน */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เงาที่ชัดเจนขึ้น */
+  position: relative; /* เพื่อให้สามารถใช้ตำแหน่งได้ */
+  
+}
+
+h2 {
+  text-align: center; /* จัดกลางหัวเรื่อง */
+  margin-bottom: 20px; /* ช่องว่างด้านล่างของหัวเรื่อง */
+  color: #c94a56; /* เปลี่ยนสีให้เข้ากับธีม */
+  font-size: 32px; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ตัวหนา */
+  text-transform: uppercase; /* ตัวพิมพ์ใหญ่ทั้งหมด */
+  padding-bottom: 10px; /* ช่องว่างด้านล่างหัวเรื่อง */
+  border-bottom: 2px solid #c94a56; /* ขอบด้านล่างเพื่อเน้น */
+}
+
+.table {
+  width: 100%; /* ทำให้ตารางกว้างเต็มคอนเทนเนอร์ */
+  border-collapse: collapse; /* รวมขอบของเซลล์ */
+  margin-top: 20px; /* ช่องว่างด้านบนตาราง */
+}
+
+.table th, .table td {
+  padding: 15px; /* ช่องว่างด้านในเซลล์ */
+  text-align: center; /* จัดข้อความให้ชิดซ้าย */
+  border: 3px solid #b9a021; /* ขอบเซลล์ */
+}
+
+.table th {
+  text-align: center;
+  background-color: #ff6f61; /* สีพื้นหลังของหัวตาราง */
+  color: white; /* สีของข้อความในหัวตาราง */
+  font-size: 20px; /* ขนาดตัวอักษร */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f7f7f7; /* สีพื้นหลังของแถวที่เป็นเลขคู่ */
+}
+
+.table tbody tr:hover {
+  background-color: #f4cccc; /* สีพื้นหลังเมื่อเลื่อนเมาส์ */
+}
+
+.btn {
+  padding: 12px 20px; /* ช่องว่างในปุ่ม */
+  background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+  color: white; /* สีข้อความในปุ่ม */
+  border: none; /* ไม่มีขอบ */
+  border-radius: 80px; /* ขอบมน */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อเลื่อนเมาส์ */
+  transition: background-color 0.3s, transform 0.2s; /* เอฟเฟ็กต์เปลี่ยนสีเมื่อเลื่อนเมาส์ */
+  font-size: 20px; /* ขนาดตัวอักษร */
+  margin-top: 10px; /* ช่องว่างด้านบนปุ่ม */
+}
+
+.btn:hover {
+  background-color: #c94a56; /* สีพื้นหลังของปุ่มเมื่อเลื่อนเมาส์ */
+  transform: scale(1.05); /* ขยายขนาดปุ่มเมื่อเลื่อนเมาส์ */
+}
+
+/* เพิ่มองค์ประกอบเพิ่มเติม */
+.footer {
+  text-align: center; /* จัดกลางข้อความในฟุตเตอร์ */
+  margin-top: 30px; /* ช่องว่างด้านบนของฟุตเตอร์ */
+  padding: 20px; /* ช่องว่างด้านในฟุตเตอร์ */
+  background-color: #f1f1f1; /* สีพื้นหลังของฟุตเตอร์ */
+  border-radius: 5px; /* ขอบมน */
+  color: #555; /* สีข้อความในฟุตเตอร์ */
+  font-size: 14px; /* ขนาดตัวอักษร */
+}
+
+.icon {
+  position: absolute; /* ใช้ตำแหน่งแบบสัมพัทธ์ */
+  top: 20px; /* ระยะห่างจากด้านบน */
+  right: 20px; /* ระยะห่างจากด้านขวา */
+  width: 50px; /* ขนาดของไอคอน */
+}
+
+.d-flex {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 40px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+h2 {
+  margin-top: 60px; 
+}
+
+.btn-3 {
+  scale: 0.5;
+  padding: 0 50px;
+  width: 200px;
+  height: 64px;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+   left: -150px;
+}
+
+.btn-3:hover {
+  color: black;
+}
+
+.btn-3:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn-3:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.btn-2 {
+  scale: 0.5;
+  padding: 0 50px;
+  width: 200px;
+  height: 64px;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  left: -260px;
+}
+
+.btn-2:hover {
+  color: black;
+}
+
+.btn-2:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn-2:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}

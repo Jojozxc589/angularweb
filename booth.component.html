@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<body>
+  
+<div class="container">
+  <div>
+    <a class="nav-link" routerLink="/main/user">หน้าหลัก</a>
+  </div>
+    <h2>รายละเอียดบูธสำหรับโซน {{ projectId }}</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>บูธ ID</th>
+          <th>รหัสบูธ</th>
+          <th>ชื่อบูธ</th>
+          <th>ข้อมูลบูธ</th>
+          <th>ขนาด</th>
+          <th>รหัสโซน</th>
+          <th>สถานะ</th>
+          <th>ราคา</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booth of booths">
+          <td>{{ booth.booth_id }}</td>
+          <td>{{ booth.booth_code }}</td>
+          <td>{{ booth.booth_name }}</td>
+          <td>{{ booth.booth_info }}</td>
+          <td>{{ booth.size }}</td>
+          <td>{{ booth.project_id }}</td>
+          <td>{{ booth.status }}</td>
+          <td>{{ booth.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

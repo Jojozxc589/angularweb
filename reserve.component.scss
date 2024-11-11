@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap');
+
+body {
+  background-color: #f4f6f9;
+  font-family: 'Kanit', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto;
+    border-radius: 2px;
+  }
+}
+
+.member-info {
+  background-color: #626b66;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border-left: 5px solid #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  p {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+}
+
+.booth-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.booth-details {
+  width: 48%;
+  border: 2px solid #007bff;
+  background-color: #dfe9f3;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  &:before {
+    content: 'รายละเอียดการจองบูธ';
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+}
+
+// button {
+//   cursor: pointer;
+//   padding: 12px 25px;
+//   border: none;
+//   border-radius: 30px;
+//   font-size: 1.1rem;
+//   font-weight: 500;
+//   transition: all 0.3s ease;
+
+//   &.btn-primary {
+//     background: linear-gradient(45deg, #007bff, #00c6ff);
+//     color: white;
+
+//     &:hover {
+//       background: linear-gradient(45deg, #0056b3, #0094ff);
+//       box-shadow: 0 4px 12px rgba(0, 91, 230, 0.5);
+//     }
+//   }
+
+//   &.btn-secondary {
+//     background-color: #6c757d;
+//     color: white;
+
+//     &:hover {
+//       background-color: #5a6268;
+//       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+//     }
+//   }
+// }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .popup-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: popupAnimation 0.4s ease-out;
+
+    h3 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border-radius: 30px;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ff5252;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff1744;
+    }
+  }
+}
+
+@keyframes popupAnimation {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.btn-2,
+.btn-2 *,
+.btn-2 :after,
+.btn-2 :before,
+.btn-2:after,
+.btn-2:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  font-size: 2rem;
+  position: center;
+}
+
+.btn-2 {
+  scale: 0.5;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-2:disabled {
+  cursor: default;
+}
+
+.btn-2:-moz-focusring {
+  outline: auto;
+}
+
+.btn-2 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-2 [hidden] {
+  display: none;
+}
+
+.btn-2 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative; 
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+
+.btn-2 .original {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: #000;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-2:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-2 .letters {
+  display: inline-flex;
+}
+
+.btn-2 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+}
+
+.btn-2 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-2:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-2:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-2:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-2:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-2:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-2:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+.btn-2:hover span:nth-child(7) {
+  transition-delay: 0.6s;
+}
+.btn-2:hover span:nth-child(8) {
+  transition-delay: 0.7s;
+}
+.btn-2:hover span:nth-child(9) {
+  transition-delay: 0.8s;
+}
+.btn-2:hover span:nth-child(10) {
+  transition-delay: 0.9s;
+}
+
+
+.btn-1,
+.btn-1 *,
+.btn-1 :after,
+.btn-1 :before,
+.btn-1:after,
+.btn-1:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.btn-1 {
+  scale: 0.5;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-1:disabled {
+  cursor: default;
+}
+
+.btn-1:-moz-focusring {
+  outline: auto;
+}
+
+.btn-1 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-1 [hidden] {
+  display: none;
+}
+
+.btn-1 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-1 .original {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: #000;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-1:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-1 .letters {
+  display: inline-flex;
+}
+
+.btn-1 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+}
+
+.btn-1 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-1:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-1:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-1:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-1:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-1:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-1:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+
+
+body {
+  background-color: #ffe0b2; /* สีพื้นหลังฟ้าอ่อน */
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.8); /* สีพื้นหลังขาวโปร่ง */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section {
+  flex: 1;
+  background-color: #fce4ec; /* สีพื้นหลังของข้อมูล */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* ปุ่ม "ยืนยันการจอง" */
+.btn-primary {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  background-color: #ffab40; /* สีพาสเทล */
+  color: #fff;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 30px auto 0;
+}
+
+.btn-primary:hover {
+  background-color: #ff9100;
+}
+
+/* ปุ่ม "ย้อนกลับ" */
+.btn-secondary {
+  background-color: #ffab40; /* สีพาสเทล */
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 30px 0;
+}
+
+.btn-secondary:hover {
+  background-color: #ff9100;
+}
+
+/* ปรับตำแหน่งปุ่มย้อนกลับให้อยู่ฝั่งซ้าย */
+.back-button-wrapper {
+  display: flex;
+  justify-content: flex-start; /* จัดปุ่มย้อนกลับให้อยู่ฝั่งซ้าย */
+  margin-bottom: 20px;
+}
+
+.confirm-button-wrapper {
+  display: flex;
+  justify-content: flex-end; /* จัดปุ่มยืนยันการจองให้อยู่ฝั่งขวา */
+  margin-top: 20px;
+}
+
+/* สไตล์สำหรับป๊อปอัพ */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* พื้นหลังโปร่งใสดำ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* ให้อยู่ด้านบนสุด */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border: 5px solid rgba(255, 138, 101, 0.7); /* สี RGB วิ่งรอบกรอบ */
+  animation: pulse 1.5s infinite; /* การเคลื่อนไหว */
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 rgba(255, 138, 101, 0.7);
+  }
+  50% {
+      box-shadow: 0 0 10px rgba(255, 138, 101, 1);
+  }
+  100% {
+      box-shadow: 0 0 0 rgba(255, 138, 101, 0.7);
+  }
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.popup-content p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.popup-content .close:hover {
+  color: #ff0000;
+}
+
+.popup-content .confirm-btn {
+  background-color: #ffab40; /* สีพาสเทล */
+  color: #fff;
+}
+
+.popup-content .confirm-btn:hover {
+  background-color: #ff9100;
+}
+
+.popup-content .cancel-btn {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.popup-content .cancel-btn:hover {
+  background-color: #ddd;
+}

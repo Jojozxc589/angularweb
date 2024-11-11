@@ -1,0 +1,34 @@
+<body>
+    <button (click)="goBack()" class="btn-1">
+        <div class="original">ย้อนกลับ</div>
+        <div class="letters">
+            <span>ย้</span>
+            <span>อ</span>
+            <span>น</span>
+            <span>ก</span>
+            <span>ลั</span>
+            <span>บ</span>
+        </div>
+    </button>
+    <div class="container">
+      <div class="submit-booth-container">
+          <h2 class="submit-booth-title">ยืนยันสถานะการจอง Booth</h2>
+  
+          <form class="booking-form" (ngSubmit)="onSubmit()">
+              <label class="booking-label" for="bookingId">เลือกการจอง:</label>
+              <select class="booking-select" id="bookingId" [(ngModel)]="bookingId" name="bookingId" required>
+                  <option class="booking-option" *ngFor="let booking of bookingList" [value]="booking.booking_id">
+                      {{ booking.booking_id }}
+                  </option>
+              </select>
+  
+              <button class="submit-button" type="submit">ยืนยันการจอง</button>
+          </form>
+  
+          <div *ngIf="responseMessage" class="response-message">
+              <p class="response-text">{{ responseMessage }}</p>
+          </div>
+      </div>
+    </div>
+  </body>
+  

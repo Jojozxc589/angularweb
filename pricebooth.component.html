@@ -1,0 +1,43 @@
+<body>
+  <div class="payment-confirmation">
+    <h2>♕ ยืนยันการชำระเงิน ♕</h2>
+    <div class="member-info" *ngIf="memberData">
+      <p>ชื่อ: {{ memberData.prefix }} {{ memberData.first_name }} {{ memberData.last_name }}</p>
+      <p>เบอร์โทร: {{ memberData.phone }}</p>
+      <p>อีเมล: {{ memberData.email }}</p>
+      <p>สถานะสมาชิก: {{ memberData.member_status }}</p>
+    </div>
+
+    <div class="container">
+      <h2>รายละเอียดบูธ</h2>
+      <div class="booth-details" *ngIf="booking">
+        <h3>ข้อมูลการจองบูธ</h3>
+        <p>รหัสการจอง: {{ booking.bookingID }}</p>
+        <p>ชื่อโซน: {{ booking.projectName }}</p>
+        <p>ชื่อบูธ: {{ booking.boothName }}</p>
+        <p>ขนาด: {{ booking.size }}</p>
+        <p>รายละเอียด: {{ booking.info }}</p>
+        <p>ราคา: {{ booking.price | currency:'THB' }}</p>
+      </div>
+
+      <div class="upload-slip">
+        <h3>อัปโหลดสลิปการชำระเงิน</h3>
+        <div>
+            <label for="paymentSlip">เลือกไฟล์สลิปการชำระเงิน:</label>
+            <input type="file" id="paymentSlip" (change)="onFileSelected($event)" />
+        </div>
+        
+        <button (click)="confirmPayment()" [disabled]="loading || !selectedFile">ยืนยันการชำระเงิน</button>
+        <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+        <p *ngIf="selectedFile">เลือกไฟล์: {{ selectedFile.name }}</p>
+    </div>    
+  
+      <br>
+      <div class="payment-section">
+        <button (click)="goBack()" class="btn btn-secondary">ย้อนกลับ</button>
+      </div>
+
+      <div *ngIf="loading" class="loading">กำลังโหลด...</div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,204 @@
+/* Dialog container with glassy 3D effect */
+mat-dialog-content {
+    background: linear-gradient(135deg, rgba(240, 248, 255, 0.7), rgba(224, 242, 241, 0.7));
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transform: perspective(1000px) rotateX(0deg);
+    transition: transform 0.6s ease, box-shadow 0.5s ease;
+  }
+  
+  mat-dialog-content:hover {
+    transform: perspective(1000px) rotateX(10deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Form field styling with subtle glowing effect */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  mat-label {
+    font-size: 1.3rem;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.4s ease;
+  }
+  
+  input[matInput], textarea[matInput] {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #b0bec5;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.5s ease, box-shadow 0.6s ease;
+  }
+  
+  input[matInput]:focus, textarea[matInput]:focus {
+    border-color: #009688;
+    box-shadow: 0 0 15px rgba(0, 200, 180, 0.8), 0 0 25px rgba(0, 255, 255, 0.4);
+  }
+  
+  mat-label.focused {
+    color: #00796b;
+  }
+  
+  /* Dialog button area with space between buttons */
+  mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  /* Cancel button - gradient, glow, and hover effects */
+  button[mat-button] {
+    background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+    border: none;
+    color: #ffffff;
+    font-size: 1.05rem;
+    cursor: pointer;
+    padding: 12px 25px;
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.5s ease;
+    box-shadow: 0 8px 16px rgba(0, 200, 250, 0.4);
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  button[mat-button]:hover {
+    background: linear-gradient(135deg, #81d4fa, #29b6f6);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 150, 255, 0.5);
+  }
+  
+  button[mat-button]:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease, top 0.6s ease, left 0.6s ease;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+  
+  button[mat-button]:hover:before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  button[mat-button]:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 150, 255, 0.4);
+  }
+  
+  /* Save button with glowing ripple, neon borders, and 3D hover effect */
+  #dialog-button {
+    background: linear-gradient(145deg, #009688, #004d40);
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    transition: background 0.6s ease, box-shadow 0.5s ease, transform 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    left: 185px;
+  }
+  
+  #dialog-button:hover {
+    background: linear-gradient(145deg, #00bfa5, #00796b);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 255, 0.4);
+  }
+  
+  #dialog-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease, top 0.6s ease, left 0.6s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+  }
+  
+  #dialog-button:hover:before {
+    width: 150%;
+    height: 150%;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Ripple effect on save button click */
+  #dialog-button:active:before {
+    width: 400%;
+    height: 400%;
+    background: rgba(0, 255, 255, 0.25);
+    transition: none;
+  }
+  
+  #dialog-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 8px 18px rgba(0, 255, 255, 0.5), 0 0 25px rgba(0, 255, 255, 0.3);
+  }
+  
+  /* Glow animation for the save button */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px #00bfa5, 0 0 10px #00bfa5, 0 0 20px #00bfa5, 0 0 40px rgba(0, 255, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px #00bfa5, 0 0 40px #00bfa5, 0 0 80px rgba(0, 255, 255, 0.7), 0 0 120px rgba(0, 255, 255, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px #00bfa5, 0 0 10px #00bfa5, 0 0 20px #00bfa5, 0 0 40px rgba(0, 255, 255, 0.4);
+    }
+  }
+  
+  #dialog-button:hover {
+    animation: glow 2s infinite;
+  }
+  
+  /* Advanced glowing text effect */
+  #dialog-button span {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #dialog-button span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00bfa5, #00796b);
+    clip-path: polygon(0 0, 100% 0, 0 100%, 0 0);
+    transition: clip-path 0.4s ease;
+  }
+  
+  #dialog-button:hover span:before {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 0);
+  }
+  
+  /* Spacing between buttons */
+  mat-dialog-actions button[mat-button],
+  mat-dialog-actions #dialog-button {
+    margin: 0 10px;
+  }
+  

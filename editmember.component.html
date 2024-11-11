@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            margin-bottom: 20px; /* เว้นระยะห่างด้านล่าง */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/main/member">ระบบการจัดการบูธ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/main/member">หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/maincheck/checkbooth">ตรวจสอบการจอง</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/page/editmember">แก้ไขข้อมูลสมาชิก</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>แก้ไขข้อมูลสมาชิก</h2>
+        <div class="member-info" *ngIf="memberData">
+            <label>ชื่อ:</label>
+            <input [(ngModel)]="memberData.prefix" placeholder="คำนำหน้า" class="form-control" />
+            <input [(ngModel)]="memberData.first_name" placeholder="ชื่อ" class="form-control" />
+            <input [(ngModel)]="memberData.last_name" placeholder="นามสกุล" class="form-control" />
+            <label>เบอร์โทร:</label>
+            <input [(ngModel)]="memberData.phone" class="form-control" />
+            <label>อีเมล:</label>
+            <input [(ngModel)]="memberData.email" class="form-control" />
+            
+            <label>รหัสผ่าน:</label>
+            <input [(ngModel)]="memberData.password" class="form-control" />
+            <label>สถานะสมาชิก:</label>
+            <p>Member</p>
+            <button (click)="goBack()" class="btn btn-secondary">กลับ</button>
+            <button (click)="updateMember()" class="btn btn-primary">บันทึกการแก้ไข</button>
+        </div>
+        <div *ngIf="!memberData">
+            <p>กรุณาล็อกอินเพื่อดูข้อมูล</p>
+        </div>
+        <!-- แสดงข้อความอัปเดตสำเร็จ -->
+        <div *ngIf="successMessage" class="alert alert-success mt-3">
+            {{ successMessage }}
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

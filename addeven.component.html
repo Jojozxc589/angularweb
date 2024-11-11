@@ -1,0 +1,75 @@
+<body>
+    <button (click)="goBack()" class="btn-1">
+        <div class="original">ย้อนกลับ</div>
+        <div class="letters">
+            <span>ย้</span>
+            <span>อ</span>
+            <span>น</span>
+            <span>ก</span>
+            <span>ลั</span>
+            <span>บ</span>
+        </div>
+    </button>
+<div class="container">
+    <h2 class="event-title">👻 เพิ่มอีเวนต์ใหม่ 👻</h2>
+  
+    <form [formGroup]="eventForm" class="event-form">
+        <div class="form-group">
+            <label for="event_code" class="form-label">🧛‍♂️ รหัสอีเวนต์ 🧛‍♂️:</label>
+            <input id="event_code" formControlName="event_code" type="text" class="form-input" required>
+            <div *ngIf="eventForm.get('event_code')?.invalid && (eventForm.get('event_code')?.dirty || eventForm.get('event_code')?.touched)">
+                <small class="error">กรุณาระบุรหัสอีเวนต์</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="event_name" class="form-label">🎃 ชื่ออีเวนต์ 🎃:</label>
+            <input id="event_name" formControlName="event_name" type="text" class="form-input" required>
+            <div *ngIf="eventForm.get('event_name')?.invalid && (eventForm.get('event_name')?.dirty || eventForm.get('event_name')?.touched)">
+                <small class="error">กรุณาระบุชื่ออีเวนต์</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="start_date" class="form-label">✨ วันเริ่มต้น ✨:</label>
+            <input id="start_date" formControlName="start_date" type="date" class="form-input" required>
+            <div *ngIf="eventForm.get('start_date')?.invalid && (eventForm.get('start_date')?.dirty || eventForm.get('start_date')?.touched)">
+                <small class="error">กรุณาระบุวันเริ่มต้น</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="end_date" class="form-label">🕯️ วันสิ้นสุด 🕯️:</label>
+            <input id="end_date" formControlName="end_date" type="date" class="form-input" required>
+            <div *ngIf="eventForm.get('end_date')?.invalid && (eventForm.get('end_date')?.dirty || eventForm.get('end_date')?.touched)">
+                <small class="error">กรุณาระบุวันสิ้นสุด</small>
+            </div>
+        </div>
+
+        <button type="button" (click)="addNewEvent()" [disabled]="eventForm.invalid" class="btn-add-event">เพิ่มอีเวนต์</button>
+    </form>
+
+    <h3 class="booking-title">การจองที่ไม่มีอีเวนต์:</h3>
+    <div *ngFor="let booking of bookings" class="booking-item">
+        <p class="booking-info">Booking ID: {{ booking.booking_id }}</p>
+        <p class="booking-info">Booth ID: {{ booking.booth_id }}</p>
+        <p class="booking-info">Created At: {{ booking.created_at }}</p>
+        
+        <label for="event_code_{{ booking.booking_id }}" class="event-code-label">เลือก Event Code:</label>
+        <select id="event_code_{{ booking.booking_id }}" [(ngModel)]="selectedEventCode[booking.booking_id]" class="event-code-select">
+            <option *ngFor="let event of events" [value]="event.event_code">
+                {{ event.event_code }} - {{ event.event_name }}
+            </option>
+        </select>
+
+        <button type="button" (click)="addEventCodeToBooking(booking.booking_id)" class="btn-add-event-code">เพิ่ม Event Code</button>
+    </div>
+
+</div>
+<div class="event_card">
+    <h3 class="event-list-title">รายการอีเวนต์ที่มีอยู่</h3>
+    <ul class="event-list">
+        <li *ngFor="let event of events" class="event-list-item">{{ event.event_code }} - {{ event.event_name }}</li>
+    </ul>
+</div>
+</body>

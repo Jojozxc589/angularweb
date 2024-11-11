@@ -1,0 +1,341 @@
+// สีพื้นฐาน
+$primary-color: #ff9800; // สีส้ม
+$secondary-color: #f5f5f5; // สีเทาอ่อนสำหรับพื้นหลัง
+$light-color: #fff; // สีขาว
+$text-color: #333; // สีข้อความ
+$border-radius: 10px; // มุมมน
+$hover-color: darken($primary-color, 15%); // สีเมื่อ hover
+$shadow-color: rgba(0, 0, 0, 0.1); // สีเงา
+
+body {
+    font-family: 'Itim', sans-serif; // ใช้ฟอนต์ที่กำหนด
+    background: linear-gradient(
+            135deg,
+            lighten($primary-color, 50%), // เริ่มต้นด้วยสีหลักที่สว่างขึ้นมาก
+            lighten($primary-color, 40%), // สีหลักที่สว่างขึ้น
+            $primary-color, // สีหลัก
+            darken($primary-color, 5%)  // ลงท้ายด้วยสีที่เข้มขึ้นเพื่อเพิ่มมิติ
+        ),
+        radial-gradient(
+            circle at top left,
+            rgba(255, 255, 255, 0.7), // เพิ่มแสงเงาบางๆ จากมุมบนซ้าย
+            rgba(0, 0, 0, 0)
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255, 255, 255, 0.4), // เพิ่มแสงเงาอีกมุมเพื่อเพิ่มความลึก
+            rgba(0, 0, 0, 0)
+        );
+    background-size: 120%; // คลุมพื้นหลังเต็มหน้าจอ
+    height: 110%;// พื้นหลังอยู่คงที่เมื่อเลื่อนหน้าเว็บ
+    margin: 0; // เอา margin ออก
+    padding: 10px; // เพิ่มระยะห่างด้านใน
+    transition: background 0.5s ease; // ทำให้การเปลี่ยนพื้นหลังนุ่มนวล
+}
+
+.navbar {
+    background-color: $primary-color; // สีพื้นหลังของ navbar
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // เพิ่มเงาที่ดูมีมิติและคมชัด
+    border-radius: $border-radius;
+    padding: 0.8rem 2rem; // เพิ่ม padding เพื่อให้ navbar หนาและมั่นคง
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; // เพิ่ม transition ให้ smooth
+
+    &:hover {
+        background-color: lighten($primary-color, 7%); // เปลี่ยนสีพื้นหลังเมื่อ hover
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); // เพิ่มเงาให้ลึกขึ้น
+    }
+    
+    .navbar-brand {
+        color: #000 !important; // สีโลโก้ navbar
+        font-weight: bold;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: color 0.3s ease, transform 0.3s ease;
+        
+        &:hover {
+            color: darken($hover-color, 10%) !important; // สีโลโก้เมื่อ hover
+            transform: scale(1.1) rotate(-2deg); // ขยายและเอียงเล็กน้อยเมื่อ hover
+        }
+    }
+
+    .nav-link {
+        color: #000000 !important; // สีข้อความใน navbar
+        font-weight: 600; // ทำให้ข้อความหนาพอดี
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        padding: 0.7rem 1.2rem; // เพิ่ม padding ให้สวยงามขึ้น
+        margin: 0 0.5rem; // เพิ่มระยะห่างระหว่างลิงก์
+        border-radius: $border-radius; // เพิ่มมุมโค้งมน
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            color: $hover-color !important; // เปลี่ยนสีข้อความเมื่อ hover
+            background-color: rgba(255, 255, 255, 0.25); // เพิ่มพื้นหลังโปร่งแสง
+            text-decoration: underline dotted; // ขีดเส้นใต้แบบ dotted
+            transform: scale(1.1); // ขยายขนาดมากขึ้นเมื่อ hover
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); // เพิ่มเงาที่ดูหรูหรา
+        }
+
+        &:active {
+            transform: scale(1); // คืนขนาดเดิมเมื่อกดคลิก
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // เงาน้อยลงเมื่อกด
+        }
+    }
+
+    .nav-item.active .nav-link {
+        color: darken($hover-color, 15%) !important; // สีเข้มขึ้นสำหรับลิงก์ที่ active
+        border-bottom: 2px solid $hover-color; // ขีดเส้นใต้ลิงก์ที่ active
+    }
+}
+
+
+
+h2 {
+    color: $text-color; // สีหัวข้อ
+    margin-bottom: 30px; // เว้นระยะห่างด้านล่าง
+    text-align: center; // จัดกลาง
+    font-size: 2.5rem; // ขนาดตัวอักษรใหญ่ขึ้น
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); // เงาเบาให้กับหัวข้อ
+    letter-spacing: 1px; // เพิ่มระยะห่างระหว่างตัวอักษร
+}
+
+.member-info {
+    background-color: $light-color; // สีพื้นหลังของข้อมูลสมาชิก
+    border-radius: $border-radius; // มุมมน
+    padding: 30px; // ระยะห่างภายใน
+    box-shadow: 0 4px 20px $shadow-color; // เงาเบา
+    margin-bottom: 20px; // เว้นระยะห่างด้านล่าง
+    transition: transform 0.3s ease, box-shadow 0.3s ease; // การเปลี่ยนแปลงขนาดและเงา
+
+    &:hover {
+        transform: translateY(-5px); // ยกขึ้นเล็กน้อยเมื่อ hover
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); // เพิ่มเงาเมื่อ hover
+        border: 1px solid $primary-color; // เพิ่มกรอบเมื่อ hover
+    }
+}
+
+label {
+    font-weight: bold; // ทำให้ตัวอักษรของ label หนา
+    margin-top: 10px; // เว้นระยะห่างด้านบน
+    display: block; // ให้ label แสดงเป็นบล็อค
+    transition: color 0.3s ease; // เปลี่ยนสีตัวอักษรนุ่มนวล
+}
+
+label:hover {
+    color: $primary-color; // เปลี่ยนสีเมื่อ hover
+    text-decoration: underline; // ขีดเส้นใต้เมื่อ hover
+}
+
+input.form-control {
+    margin-bottom: 20px; // เว้นระยะห่างระหว่าง input
+    border-radius: $border-radius; // มุมมน
+    border: 1px solid #ccc; // สีกรอบปกติ
+    padding: 10px; // เพิ่มระยะห่างภายใน
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; // ทำให้มีการเปลี่ยนแปลงสีกรอบนุ่มนวล
+}
+
+input.form-control:focus {
+    border-color: $primary-color; // สีกรอบเมื่อมีการ focus
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5); // เงาเมื่อ focus
+    outline: none; // เอา outline ออก
+    background-color: lighten($light-color, 5%); // เปลี่ยนสีพื้นหลังเมื่อ focus
+}
+
+.btn-primary {
+    background-color: #f0d71b; // กำหนดสีพื้นหลังปุ่มบันทึก
+    border-color: $primary-color; // กำหนดสีกรอบปุ่ม
+    border-radius: $border-radius; // มุมมน
+    transition: background-color 0.3s ease, transform 0.3s ease; // เปลี่ยนสีพื้นหลังนุ่มนวล
+    padding: 10px 20px; // เพิ่ม padding ให้ปุ่ม
+    font-weight: bold; // ทำให้ข้อความในปุ่มหนา
+    font-size: 1rem; // ขนาดข้อความในปุ่ม
+    box-shadow: 0 4px 10px $shadow-color; // เพิ่มเงาให้กับปุ่ม
+    margin: 30px;
+}
+
+.btn-primary:hover {
+    background-color: darken(#fe9e28, 5%); // มืดลงเมื่อ hover
+    transform: scale(1.05); // ขยายขนาดเล็กน้อยเมื่อ hover
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); // เพิ่มเงาเมื่อ hover
+}
+
+.btn-secondary {
+    background-color: #6c757d; // สีพื้นหลังปุ่มกลับ
+    border-radius: $border-radius; // มุมมน
+    color: #fff; // สีข้อความ
+    transition: background-color 0.3s ease, transform 0.3s ease; // การเปลี่ยนสีพื้นหลังนุ่มนวล
+}
+
+.btn-secondary:hover {
+    background-color: darken(#6c757d, 10%); // มืดลงเมื่อ hover
+    transform: scale(1.05); // ขยายขนาดเล็กน้อยเมื่อ hover
+}
+
+.alert {
+    background-color: $primary-color; // สีพื้นหลังของข้อความแจ้งเตือน
+    color: $light-color; // สีข้อความใน alert
+    border: none; // เอากรอบออก
+    border-radius: $border-radius; // มุมมน
+    padding: 15px; // ระยะห่างภายใน
+    margin-top: 20px; // เว้นระยะห่างด้านบน
+    transition: opacity 0.3s ease; // การเปลี่ยนแปลงความโปร่งใส
+
+    &:hover {
+        opacity: 0.9; // ลดความโปร่งใสเมื่อ hover
+        transform: scale(1.02); // ขยายขนาดเมื่อ hover
+    }
+}
+
+// เพิ่มการปรับแต่งเพิ่มเติมสำหรับปุ่มยกเลิก
+.btn-secondary {
+    background-color: #6c757d; // สีพื้นหลังปุ่มยกเลิก
+    border-radius: $border-radius; // มุมมน
+    color: #fff; // สีข้อความ
+    transition: background-color 0.3s ease, transform 0.3s ease; // การเปลี่ยนสีพื้นหลังนุ่มนวล
+}
+
+.btn-secondary:hover {
+    background-color: darken(#6c757d, 10%); // มืดลงเมื่อ hover
+    transform: scale(1.05); // ขยายขนาดเล็กน้อยเมื่อ hover
+}
+
+// เพิ่มส่วนการจัดวางเนื้อหาที่ให้ดูเรียบร้อย
+.container {
+    max-width: 1200px; // กำหนดความกว้างสูงสุด
+    margin: 0 auto; // จัดกลาง
+    padding: 20px; // เพิ่ม padding
+}
+
+// เพิ่มการจัดเรียงให้กับ card
+.card {
+    background-color: $light-color; // สีพื้นหลังของ card
+    border-radius: $border-radius; // มุมมน
+    box-shadow: 0 4px 15px $shadow-color; // เงา
+    transition: transform 0.3s ease, box-shadow 0.3s ease; // เปลี่ยนแปลงขนาดและเงา
+
+    &:hover {
+        transform: translateY(-5px); // ยกขึ้นเล็กน้อยเมื่อ hover
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); // เพิ่มเงาเมื่อ hover
+    }
+}
+
+// เพิ่มการจัดวางสำหรับรูปภาพ
+img {
+    max-width: 100%; // กำหนดให้รูปภาพไม่เกินขนาดของ container
+    height: auto; // รักษาสัดส่วน
+    border-radius: $border-radius; // มุมมน
+    margin-bottom: 15px; // ระยะห่างด้านล่าง
+}
+// เพิ่มการตั้งค่าแบบรวมศูนย์และโครงร่างสำหรับ layout
+.layout-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: $secondary-color;
+    transition: all 0.5s ease;
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+// เพิ่มสไตล์สำหรับฟุตเตอร์
+.footer {
+    background-color: darken($primary-color, 10%);
+    padding: 20px;
+    color: $light-color;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: $border-radius;
+    margin-top: 20px;
+    box-shadow: 0 -4px 10px $shadow-color;
+}
+
+// เพิ่มสไตล์ให้กับ breadcrumbs
+.breadcrumb {
+    background: $secondary-color;
+    padding: 8px 15px;
+    border-radius: $border-radius;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px $shadow-color;
+    font-size: 0.9rem;
+
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: darken($primary-color, 15%);
+            text-decoration: underline;
+        }
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "›";
+        padding: 0 8px;
+        color: $text-color;
+    }
+}
+
+// ปรับแต่งการแสดง modal
+.modal-content {
+    background-color: $light-color;
+    border-radius: $border-radius;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
+    .modal-header, .modal-footer {
+        border: none;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $primary-color;
+    }
+
+    .modal-footer .btn-primary {
+        background-color: $primary-color;
+        border: none;
+        border-radius: $border-radius;
+        padding: 8px 15px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: lighten($primary-color, 10%);
+        }
+    }
+}
+
+// เพิ่มแอนิเมชันให้กับการเลื่อนของ scroll
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+// เพิ่มสไตล์และการจัดเรียงสำหรับ card
+.card-content {
+    padding: 15px;
+    color: $text-color;
+    text-align: left;
+
+    h3 {
+        font-size: 1.25rem;
+        color: $primary-color;
+        margin-bottom: 10px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+    }
+}

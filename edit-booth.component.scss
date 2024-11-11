@@ -1,0 +1,270 @@
+body {
+  font-family: 'Itim', cursive; /* ใช้ฟอนต์ Itim สำหรับเนื้อหาทั้งหมด */
+}
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background-image: url('/assets/toto.jpg'); /* แทนที่ด้วยที่อยู่รูปของคุณ */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  mat-form-field {
+    width: 100%;
+    background: rgba(255, 236, 201, 0.8); /* ใช้สีส้มที่มีความโปร่งใส */
+    padding: 10px;
+    border-radius: 8px;
+
+    mat-label {
+      color: #000000; /* เปลี่ยนสีข้อความเป็นสีขาวเพื่อให้มองเห็นได้ชัดเจน */
+    }
+
+    input, textarea {
+      color: #333; /* เปลี่ยนสีข้อความภายในฟอร์มเป็นสีที่เข้มขึ้นเพื่อความชัดเจน */
+    }
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+}
+
+mat-dialog-actions {
+  display: flex; /* ใช้ flexbox เพื่อจัดเรียงปุ่ม */
+  justify-content: center; /* ปรับการจัดเรียงให้ปุ่มอยู่ที่ด้านขวา */
+  padding: 0px;
+  background-color: #f8e2a4; /* เปลี่ยนสีพื้นหลังของพื้นที่ข้างหลังปุ่มเป็นสีไข่ */
+  border-top: 1px solid #fbc02d; /* เปลี่ยนสีเส้นเป็นสีเหลืองเข้มเพื่อให้เข้ากับโทนรูป */
+  
+  button {
+    font-size: 16px;
+    color: #fff;
+
+    &#dialog-button {
+      background-color: #0011ff; /* ใช้สีส้มแดงเหมือนแสงอาทิตย์ตก */
+      
+      &:hover {
+        background-color: #01b3ff; /* ใช้สีที่เข้มขึ้นเมื่อ hover */
+      }
+    }
+
+    &:not(#dialog-button) {
+      background-color: #ff0000; /* ปุ่มยกเลิกเป็นสีส้มที่อ่อนลง */
+      
+      &:hover {
+        background-color: #ff7b00; /* สี hover ที่เข้มขึ้น */
+      }
+    }
+  }
+}
+.btn-2,
+.btn-2 *,
+.btn-2 :after,
+.btn-2 :before,
+.btn-2:after,
+.btn-2:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.btn-2 {
+  scale: 0.5;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  color: #ff6f61;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-2:disabled {
+  cursor: default;
+}
+
+.btn-2:-moz-focusring {
+  outline: auto;
+}
+
+.btn-2 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-2 [hidden] {
+  display: none;
+}
+
+.btn-2 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-2 .original {
+    background-color: #4000ff; /* สีพื้นหลังของปุ่ม */
+  color: #ffffff;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-2:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-2 .letters {
+  display: inline-flex;
+}
+
+.btn-2 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+}
+
+.btn-2 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-2:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-2:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-2:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-2:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-1,
+.btn-1 *,
+.btn-1 :after,
+.btn-1 :before,
+.btn-1:after,
+.btn-1:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.btn-1 {
+  scale: 0.5;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  color: #ff6f61;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-1:disabled {
+  cursor: default;
+}
+
+.btn-1:-moz-focusring {
+  outline: auto;
+}
+
+.btn-1 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-1 [hidden] {
+  display: none;
+}
+
+.btn-1 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-1 .original {
+    background-color: #ff1500; /* สีพื้นหลังของปุ่ม */
+  color: #ffffff;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-1:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-1 .letters {
+  display: inline-flex;
+}
+
+.btn-1 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+}
+
+.btn-1 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-1:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-1:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-1:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-1:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-1:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}

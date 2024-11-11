@@ -1,0 +1,122 @@
+.members-list {
+  background: linear-gradient(to right, #ffe5d0, #ffeadb);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* จัดตำแหน่งแนวตั้ง */
+  justify-content: center; /* จัดตำแหน่งแนวนอน */
+  padding: 20px;
+
+  h2 {
+    color: #ff6f61;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;  
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      font-size: 1em;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: #ff6f61;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fff5e1;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    tr:hover {
+      background-color: #ffeadb;
+      transition: background-color 0.3s ease;
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* ปรับปรุงปุ่ม */
+.btn-1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border: 1px solid #ff6f61;
+  border-radius: 999px;
+  background-color: #ff6f61;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1em;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: fixed; /* ใช้ fixed เพื่อให้ตำแหน่งคงที่ */
+  top: 50px; /* ตั้งค่าตำแหน่งให้ขึ้นจากขอบบน */
+  left: 80px; /* ตั้งค่าตำแหน่งให้เข้าจากขอบซ้าย */
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: #ff8c75;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+  }
+
+  .original {
+    background-color: #ff6f61;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    position: absolute;
+    transition: transform 0.4s cubic-bezier(0.87, 0, 0.13, 1);
+  }
+
+  .letters {
+    display: inline-flex;
+    font-size: 1.2em;
+  }
+
+  span {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+  }
+
+  &:hover .original {
+    transform: translateY(100%);
+  }
+
+  &:hover span {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover span:nth-child(2) { transition-delay: 0.1s; }
+  &:hover span:nth-child(3) { transition-delay: 0.2s; }
+  &:hover span:nth-child(4) { transition-delay: 0.3s; }
+  &:hover span:nth-child(5) { transition-delay: 0.4s; }
+  &:hover span:nth-child(6) { transition-delay: 0.5s; }
+}

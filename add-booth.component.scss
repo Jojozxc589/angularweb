@@ -1,0 +1,67 @@
+// add-booth.component.scss
+
+// ตั้งค่าหัวเรื่องของ dialog
+h2 {
+    text-align: center; // จัดกลาง
+    font-weight: 600; // น้ำหนักตัวอักษร
+    color: #fff; // สีตัวอักษร
+    margin-bottom: 20px; // ระยะห่างด้านล่าง
+}
+
+// ตั้งค่าฟอร์ม
+form {
+    max-width: 300px; // ความกว้างสูงสุด
+    margin: 0 auto; // จัดกลางในแนวนอน
+    padding: 20px; // ระยะห่างภายใน
+    background-color: rgba(255, 165, 0, 0.9); // สีพื้นหลังแบบโปร่งใส (สีส้ม)
+    border-radius: 10px; // มุมโค้ง
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // เงา
+}
+
+// ตั้งค่าพื้นหลังของ dialog
+:host {
+    display: block; // ให้มีการจัดรูปแบบในแนวนอน
+    background: linear-gradient(135deg, #ff9800, #ff5722); // สีพื้นหลังแบบเกรเดียนต์ (สีส้ม)
+    min-height: 90vh; // ความสูงขั้นต่ำ
+    padding: 10px; // ระยะห่างภายใน
+}
+
+// ตั้งค่าฟอร์มฟิลด์
+.mat-form-field {
+    width: 100%; // ความกว้างเต็ม
+    margin-bottom: 15px; // ระยะห่างด้านล่าง
+    background-color: #ffffff; // เพิ่มพื้นหลังสีขาวให้กับฟิลด์
+    border-radius: 5px; // มุมโค้ง
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // เพิ่มเงาเล็กน้อย
+}
+
+// ตั้งค่าฟิลด์ราคาที่ทำให้ชัดเจน
+.mat-form-field input[type="number"] {
+    background-color: #ffffff; // สีพื้นหลังฟิลด์ราคา
+    color: #000000; // สีตัวอักษรฟิลด์ราคา
+}
+
+// ตั้งค่าปุ่ม
+button {
+    width: 48%; // ความกว้างของปุ่ม
+    margin: 5px; // ระยะห่างซ้ายขวา
+    border-radius: 5px; // มุมโค้งเล็กน้อย
+}
+
+// ปรับปุ่มเพิ่มบูธ
+button:first-child {
+    background-color: #ff9800; // สีพื้นหลัง (สีส้ม)
+    color: white; // สีตัวอักษร
+    &:hover {
+        background-color: #fb8c00; // สีเมื่อชี้เมาส์
+    }
+}
+
+// ปรับปุ่มยกเลิก
+button:last-child {
+    background-color: #ff5722; // สีพื้นหลัง (สีส้มเข้ม)
+    color: white; // สีตัวอักษร
+    &:hover {
+        background-color: #e64a19; // สีเมื่อชี้เมาส์
+    }
+}

@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>ยืนยันการลบ</h2>
+<div mat-dialog-content>
+  <p>{{ data.message }}</p>
+</div>
+<div mat-dialog-actions>
+<button mat-button color="warn" (click)="onConfirm()">ยืนยัน</button>
+<button mat-button (click)="onCancel()">ยกเลิก</button>
+</div>

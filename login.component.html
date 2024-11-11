@@ -1,0 +1,30 @@
+
+
+<div class="login-container">
+    
+    <h2 class="login-title">🔑 Login 🔒</h2>
+    <form (ngSubmit)="onSubmit()" class="login-form">
+        <div class="input-group">
+            <label>Email:</label>
+            <input type="email" [(ngModel)]="email" name="email" required class="input-field">
+        </div>
+        <div class="input-group">
+            <label>Password:</label>
+            <input type="password" [(ngModel)]="password" name="password" required class="input-field">
+        </div>
+        <button type="submit" class="login-button">Login</button>
+        <button type="button" class="register-button" (click)="goToRegister()">สมัครสมาชิก</button>
+        <button type="buttonback" class="back-button" (click)="goBack()">ย้อนกลับ</button>
+    </form>
+</div>
+
+<!-- ป๊อบอัพสำหรับแสดงข้อความแจ้งเตือน -->
+<div id="popup" class="popup" *ngIf="showPopup">
+    <div class="popup-content">
+        <span class="close" (click)="closePopup()">&times;</span>
+        <p class="error-message">{{ errorMessage }}</p>
+        <p><strong>ข้อมูลการเข้าสู่ระบบ:</strong></p>
+        <p>Email: {{ email }}</p>
+        <p>Password: ********</p> <!-- ไม่แสดงรหัสผ่าน -->
+    </div>
+</div>

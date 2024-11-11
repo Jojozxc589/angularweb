@@ -1,0 +1,71 @@
+:host {
+    display: block;
+    background: linear-gradient(135deg, #ff6f00, #ff9800); // สีพื้นหลังแบบเกรเดียนต์ (โทนสีส้ม)
+    padding: 20px; // ระยะห่างภายใน
+    border-radius: 8px; // มุมโค้ง
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); // เงา
+}
+
+h2 {
+    text-align: center; // จัดกลาง
+    font-family: 'Itim', cursive; // ฟอนต์
+    color: #fff; // สีตัวอักษร
+    padding: 10px; // ระยะห่างภายใน
+    font-size: 32px; // ขนาดตัวอักษร
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); // เงา
+    border-radius: 5px; // มุมโค้ง
+    margin-bottom: 20px; // ระยะห่างด้านล่าง
+}
+
+.form-group {
+    margin-bottom: 15px; // ระยะห่างด้านล่าง
+}
+
+label {
+    font-weight: bold; // น้ำหนักตัวอักษร
+    color: #ffecb3; // สีตัวอักษร (สีครีม)
+}
+
+input.form-control, textarea.form-control {
+    width: 100%; // ความกว้างเต็ม
+    padding: 10px; // ระยะห่างภายใน
+    border: 1px solid #ccc; // ขอบ
+    border-radius: 4px; // มุมโค้ง
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); // เงา
+    transition: border-color 0.3s; // การเปลี่ยนแปลงสีขอบ
+}
+
+input.form-control:focus, textarea.form-control:focus {
+    border-color: #ff9800; // เปลี่ยนสีขอบเมื่อมีการโฟกัส
+    outline: none; // ไม่ให้มีเส้นขอบเมื่อโฟกัส
+}
+
+button {
+    width: 48%; // ความกว้างของปุ่ม
+    padding: 10px; // ระยะห่างภายใน
+    margin: 5px; // ระยะห่างซ้ายขวา
+    border-radius: 4px; // มุมโค้ง
+    font-size: 16px; // ขนาดตัวอักษร
+    cursor: pointer; // เปลี่ยนเป็นลูกศร
+    transition: background-color 0.3s, border-color 0.3s; // การเปลี่ยนแปลงสีเมื่อโฟกัส
+}
+
+// ปรับปุ่มบันทึก
+.btn-primary {
+    background-color: #ff8f00; // สีพื้นหลัง (สีส้มเข้ม)
+    border-color: #000000; // สีขอบ
+    &:hover {
+        background-color: #ff6f00; // สีเมื่อชี้เมาส์
+        border-color: #000000; // สีขอบเมื่อชี้เมาส์
+    }
+}
+
+// ปรับปุ่มยกเลิก
+.btn-secondary {
+    background-color: #ff1744; // สีพื้นหลัง (สีแดง)
+    border-color: #000000; // สีขอบ
+    &:hover {
+        background-color: #ff5252; // สีเมื่อชี้เมาส์
+        border-color: #000000; // สีขอบเมื่อชี้เมาส์
+    }
+}

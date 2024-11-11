@@ -1,0 +1,148 @@
+.backg {
+  background: #ff6f61; /* ใช้สีเดียวกับพื้นหลังของ price-list */
+  height: 95%;
+  padding: 20px; /* เพิ่ม padding ให้กับ background */
+}
+
+.price-list {
+  background: #ffe5d0; /* พื้นหลังของ price-list */
+  padding: 40px;
+  height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ff6f61;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center; /* จัดปุ่มให้กึ่งกลาง */
+    flex-wrap: wrap; /* ให้ปุ่มสามารถเรียงต่อกันได้ในแนวนอน */
+    margin-bottom: 20px;
+    
+
+    button {
+      margin: 0 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+      color: #fff; /* สีข้อความของปุ่ม */
+      transition: background-color 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        background-color: #ff8c75; /* เปลี่ยนสีพื้นหลังเมื่อเลื่อนเมาส์ */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  table {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff; /* พื้นหลังของตาราง */
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 1.25em;
+    th {
+      background-color: #ff6f61; /* สีพื้นหลังของหัวตาราง */
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    tr {
+      transition: transform 0.2s; 
+      
+      &:hover {
+        transform: scale(1.02); 
+        background-color: #ffeadb; 
+      }
+
+      &:nth-child(even) {
+        background-color: #ffffff; /* สีพื้นหลังสำหรับแถวที่คู่ */
+      }
+
+      &:nth-child(odd) {
+        background-color: #fff5dc; /* สีพื้นหลังสำหรับแถวที่คี่ */
+      }
+    }
+
+    td {
+      padding: 16px;
+      text-align: left;
+      font-size: 1.1em;
+      color: #333;
+      background-color: transparent; /* ใช้สีพื้นหลังของ tr แทน */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+      border: 1px solid #ddd; 
+    }
+  }
+
+  div {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff6f61;
+  }
+}
+
+.btn-1 {
+  position: relative;
+  border: 1px solid;
+  border-radius: 999px;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  text-transform: uppercase;
+  background-color: #ffffff; /* สีพื้นหลังของปุ่ม */
+  color: #ff6f61; /* สีข้อความของปุ่ม */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-1:hover {
+  background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเมื่อเลื่อนเมาส์ */
+  color: #ffffff; /* เปลี่ยนสีข้อความเมื่อเลื่อนเมาส์ */
+}
+
+.btn-1 .original {
+  background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+  color: #ffffff;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-1:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-1 .letters {
+  display: inline-flex;
+}
+
+.btn-1 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+}
+
+.btn-1:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}

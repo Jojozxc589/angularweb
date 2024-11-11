@@ -1,0 +1,102 @@
+body {
+    background-color: #f5ffc9; /* สีพื้นหลังของทั้งหน้า */
+    font-family: 'Arial', sans-serif; /* แบบอักษร */
+}
+
+.container {
+    max-width: 1200px; /* ขนาดสูงสุดของคอนเทนเนอร์ */
+    margin: 30px auto; /* จัดกลาง */
+    padding: 30px; /* ช่องว่างด้านใน */
+    background-color: #f9f2e1; /* สีพื้นหลังของคอนเทนเนอร์ */
+    border-radius: 15px; /* ขอบมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เงาที่ชัดเจนขึ้น */
+    position: relative; /* เพื่อให้สามารถใช้ตำแหน่งได้ */
+}
+
+h2 {
+    text-align: center; /* จัดกลางหัวเรื่อง */
+    margin-bottom: 20px; /* ช่องว่างด้านล่างของหัวเรื่อง */
+    color: #c94a56; /* เปลี่ยนสีให้เข้ากับธีม */
+    font-size: 32px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    text-transform: uppercase; /* ตัวพิมพ์ใหญ่ทั้งหมด */
+    padding-bottom: 10px; /* ช่องว่างด้านล่างหัวเรื่อง */
+    border-bottom: 2px solid #c94a56; /* ขอบด้านล่างเพื่อเน้น */
+}
+
+.table {
+    width: 100%; /* ทำให้ตารางกว้างเต็มคอนเทนเนอร์ */
+    border-collapse: collapse; /* รวมขอบของเซลล์ */
+    margin-top: 20px; /* ช่องว่างด้านบนตาราง */
+}
+
+.table th, .table td {
+    padding: 15px; /* ช่องว่างด้านในเซลล์ */
+    text-align: center; /* จัดข้อความให้ชิดกลาง */
+    border: 3px solid #b9a021; /* ขอบเซลล์ */
+}
+
+.table th {
+    background-color: #ff6f61; /* สีพื้นหลังของหัวตาราง */
+    color: white; /* สีของข้อความในหัวตาราง */
+    font-size: 20px; /* ขนาดตัวอักษร */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f7f7f7; /* สีพื้นหลังของแถวที่เป็นเลขคู่ */
+}
+
+.table tbody tr:hover {
+    background-color: #f4cccc; /* สีพื้นหลังเมื่อเลื่อนเมาส์ */
+}
+
+.btn {
+    padding: 12px 20px; /* ช่องว่างในปุ่ม */
+    background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีข้อความในปุ่ม */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 80px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อเลื่อนเมาส์ */
+    transition: background-color 0.3s, transform 0.2s; /* เอฟเฟ็กต์เปลี่ยนสีเมื่อเลื่อนเมาส์ */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    margin-top: 10px; /* ช่องว่างด้านบนปุ่ม */
+}
+
+.btn:hover {
+    background-color: #c94a56; /* สีพื้นหลังของปุ่มเมื่อเลื่อนเมาส์ */
+    transform: scale(1.05); /* ขยายขนาดปุ่มเมื่อเลื่อนเมาส์ */
+}
+
+/* เพิ่มองค์ประกอบเพิ่มเติม */
+.footer {
+    text-align: center; /* จัดกลางข้อความในฟุตเตอร์ */
+    margin-top: 30px; /* ช่องว่างด้านบนของฟุตเตอร์ */
+    padding: 20px; /* ช่องว่างด้านในฟุตเตอร์ */
+    background-color: #f1f1f1; /* สีพื้นหลังของฟุตเตอร์ */
+    border-radius: 5px; /* ขอบมน */
+    color: #555; /* สีข้อความในฟุตเตอร์ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+}
+
+.icon {
+    position: absolute; /* ใช้ตำแหน่งแบบสัมพัทธ์ */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    right: 20px; /* ระยะห่างจากด้านขวา */
+    width: 50px; /* ขนาดของไอคอน */
+}
+.nav-link{
+    padding: 12px 20px; /* ช่องว่างในปุ่ม */
+    background-color: #ff6f61; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีข้อความในปุ่ม */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 80px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อเลื่อนเมาส์ */
+    transition: background-color 0.3s, transform 0.2s; /* เอฟเฟ็กต์เปลี่ยนสีเมื่อเลื่อนเมาส์ */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    margin-top: 20px; /* ช่องว่างด้านบนปุ่ม */
+    min-height: 100vh;
+}
+.nav-link:hover {
+    background-color: #c94a56; /* สีพื้นหลังของปุ่มเมื่อเลื่อนเมาส์ */
+    transform: scale(1.05); /* ขยายขนาดปุ่มเมื่อเลื่อนเมาส์ */
+}

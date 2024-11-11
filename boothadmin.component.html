@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            margin-bottom: 20px; /* เว้นระยะห่างด้านล่าง */
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/main/admin">ระบบการจัดการบูธ(สำหรับแอดมิน)</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/main/addeven">ข้อมูลการจัดงาน</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/main/editeven">แก้ไขข้อมูลการจัดงาน</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/maincheck/sumbitbooth">อนุมัติการจอง</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/maincheck/listmember">รายชื่อสมาชิก</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/maincheck/listprice">ตรวจสอบรายละเอียด</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+  <div>
+    <button (click)="goBack()" class="btn-1">
+      <div class="original">ย้อนกลับ</div>
+      <div class="letters">
+        <span>ย้</span>
+        <span>อ</span>
+        <span>น</span>
+        <span>ก</span>
+        <span>ลั</span>
+        <span>บ</span>
+      </div>
+    </button>
+  </div>
+  
+    <h2>รายละเอียดบูธสำหรับโซน {{ projectId }}</h2>
+    <button mat-button (click)="openAddBoothDialog()" class="btn btn-primary">เพิ่มบูธ</button>
+  
+    <table class="table table-bordered">
+      <thead>
+       <tr>
+          <th>บูธ ID</th>
+          <th>รหัสบูธ</th>
+          <th>ชื่อบูธ</th>
+          <th>ข้อมูลบูธ</th>
+          <th>ขนาด</th>
+          <th>รหัสโซน</th>
+          <th>สถานะ</th>
+          <th>ราคา</th>
+          <th>แก้ไขบูธ</th>
+          <th>ลบบูธ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booth of booths">
+          <td>{{ booth.booth_id }}</td>
+          <td>{{ booth.booth_code }}</td>
+          <td>{{ booth.booth_name }}</td>
+          <td>{{ booth.booth_info }}</td>
+          <td>{{ booth.size }}</td>
+          <td>{{ booth.project_id }}</td>
+          <td>{{ booth.status }}</td>
+          <td>{{ booth.price }}</td>
+          <td>
+            <button (click)="goToEditBooth(booth.booth_id)" class="btn btn-primary">แก้ไข</button>
+          </td>
+          <td>
+            <button (click)="confirmDeleteBooth(booth.booth_id, booth.booth_name)" class="btn btn-danger">ลบ</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>

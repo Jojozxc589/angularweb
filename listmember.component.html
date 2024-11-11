@@ -1,0 +1,39 @@
+<body>
+  <div>
+
+  </div>
+  <div class="members-list">
+    <h2>รายชื่อสมาชิก</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>เบอร์โทร</th>
+          <th>อีเมล</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members">
+          <td>{{ member.first_name }}</td>
+          <td>{{ member.last_name }}</td>
+          <td>{{ member.phone }}</td>
+          <td>{{ member.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="button-container">
+    <button (click)="goBack()" class="btn-1">
+      <div class="original">ย้อนกลับ</div>
+      <div class="letters">
+        <span>ย้</span>
+        <span>อ</span>
+        <span>น</span>
+        <span>ก</span>
+        <span>ลั</span>
+        <span>บ</span>
+      </div>
+    </button>
+  </div>
+</body>

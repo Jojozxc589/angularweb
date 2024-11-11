@@ -1,0 +1,46 @@
+<h2 mat-dialog-title style="text-align: center; font-family: 'Itim', cursive; color: #ff9100; background-color: #f8e2a4; padding: 10px; font-size: 30px; text-shadow: 3px 3px 5px rgba(192, 118, 0, 0.7);">แก้ไขบูธ</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>ชื่อบูธ</mat-label>
+    <input matInput placeholder="ชื่อบูธ" [(ngModel)]="boothName" name="booth_name">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>ขนาดบูธ</mat-label>
+    <input matInput placeholder="ขนาดบูธ" [(ngModel)]="size" name="size">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>ข้อมูลบูธ</mat-label>
+    <textarea matInput placeholder="ข้อมูลบูธ" [(ngModel)]="boothInfo" name="booth_info"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>รหัสโซน</mat-label>
+    <input matInput placeholder="รหัสโซน" [(ngModel)]="projectId" name="project_id">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button (click)="onCancel()" class="btn-1" style="margin-right: auto;">
+    <div class="original">ยกเลิก</div>
+    <div class="letters">
+      <span>ย</span>
+      <span>ก</span>
+      <span>เ</span>
+      <span>ลิ</span>
+      <span>ก</span>
+    </div>
+  </button>
+  
+  <button (click)="onSave()" class="btn-2" id="dialog-button" style="margin-left: auto;">
+    <div class="original">บันทึก</div>
+    <div class="letters">
+      <span>บั</span>
+      <span>น</span>
+      <span>ทึ</span>
+      <span>ก</span>
+    </div>
+  </button>
+</mat-dialog-actions>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap">
+    <style>
+       
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="back-button-wrapper">
+        <button (click)="goBack()" class="btn-1">
+            <div class="original">ย้อนกลับ</div>
+            <div class="letters">
+              <span>ย้</span>
+              <span>อ</span>
+              <span>น</span>
+              <span>ก</span>
+              <span>ลั</span>
+              <span>บ</span>
+            </div>
+          </button>
+        <!-- <button (click)="goBack()" class="btn btn-secondary">ย้อนกลับ</button> -->
+    </div>
+
+    <div class="section-wrapper">
+        <div class="section">
+            <h2>♕สมาชิก♕</h2>
+            <p>ชื่อ: {{ memberData.prefix }} {{ memberData.first_name }} {{ memberData.last_name }}</p>
+            <p>เบอร์โทร: {{ memberData.phone }}</p>
+            <p>อีเมล: {{ memberData.email }}</p>
+            <p>สถานะสมาชิก: member</p>
+        </div>
+
+        <div class="section">
+            <h2>รายละเอียดการจองบูธ</h2>
+            <p>บูธ ID: {{boothIds}}</p>
+            <p>รหัสบูธ: {{ boothCode }}</p>
+            <p>ชื่อบูธ: {{ boothName }}</p>
+            <p>ขนาด: {{ size }}</p>
+            <p>สถานะ: {{ status }}</p>
+            <p>ราคา: {{ price | currency:'THB' }}</p>
+        </div>
+    </div>
+    <button (click)="openConfirmationPopup()" class="btn-2">
+        <div class="original">ยืนยันการจอง</div>
+        <div class="letters">
+            <span>ยื</span>
+            <span>น</span>
+            <span>ยั</span>
+            <span>น</span>
+            <span>ก</span>
+            <span>า</span>
+            <span>ร</span>
+            <span>จ</span>
+            <span>อ</span>
+            <span>ง</span>
+        </div>
+      </button>
+    <!-- <button (click)="openConfirmationPopup()" class="btn-2">
+        <div class="original2">ยืนยันการจอง</div>
+        <div class="letters2">
+          <span>ยื</span>
+          <span>น</span>
+          <span>ยั</span>
+          <span>น</span>
+          <span>ก</span>
+          <span>า</span>
+          <span>ร</span>
+          <span>จ</span>
+          <span>อ</span>
+          <span>ง</span>
+        </div>
+      </button> -->
+    <!-- <button (click)="openConfirmationPopup()" class="btn btn-primary">ยืนยันการจอง</button> -->
+</div>
+
+<!-- ป๊อปอัพสำหรับการยืนยันการจอง -->
+<div id="confirm-popup" class="popup" *ngIf="isConfirmPopupVisible">
+    <div class="popup-content">
+        <span class="close" (click)="closeConfirmationPopup()">&times;</span>
+        <h3>ยืนยันการจอง</h3>
+        <p>คุณต้องการยืนยันการจองบูธ: <strong>{{ boothName }}</strong> ใช่หรือไม่?</p>
+        <button (click)="confirmBooking()" class="confirm-btn">ยืนยัน</button>
+        <button (click)="closeConfirmationPopup()" class="cancel-btn">ยกเลิก</button>
+    </div>
+</div>
+
+</body>
+</html>

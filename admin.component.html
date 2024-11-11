@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            margin-bottom: 20px; /* เว้นระยะห่างด้านล่าง */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" routerLink="/main/admin">ระบบการจัดการบูธ(สำหรับแอดมิน)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home">หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/main/addeven">ข้อมูลการจัดงาน</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/main/editeven">แก้ไขข้อมูลการจัดงาน</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/maincheck/sumbitbooth">อนุมัติการจอง</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/maincheck/listmember">รายชื่อสมาชิก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/maincheck/listprice">ตรวจสอบรายละเอียด</a>
+                </li>
+            </ul>
+        </div>
+        <button (click)="logout()" class="btn btn-danger">ออกจากระบบ</button>
+
+    </nav>
+    <div class="container">
+        <div *ngIf="!memberData">
+            <p>กรุณาล็อกอินเพื่อดูข้อมูล</p>
+        </div>
+        
+        <button (click)="openAddProjectDialog()" class="btn btn-primary">เพิ่มโซน</button>
+        <h2>🌸✧･ﾟ: *✧ ☁️ ❀ รายการโซนตั้งบูธ ❀ ☁️ ✧* :･ﾟ✧🌸</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID โซน</th>
+                    <th>รหัสโซน</th>
+                    <th>ชื่อโซน</th>
+                    <th>ข้อมูลโซน</th>
+                    <th>จำนวนบูธ</th>
+                    <th>ข้อมูลบูธภายในโซน</th>
+                    <th>แก้ไขข้อมูลโซน</th>
+                    <th>ลบข้อมูลโซน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let project of projects">
+                    <td>{{ project.project_id }}</td>
+                    <td>{{ project.project_code }}</td>
+                    <td>{{ project.project_name }}</td>
+                    <td>{{ project.project_info }}</td>
+                    <td>{{ project.total_booths }}</td>
+                    <td>
+                        <button (click)="viewBooths(project.project_id)" class="btn btn-info">ดูบูธ</button>
+                    </td>
+                    <td>
+                        <button (click)="openEditModal(project)" class="btn btn-warning">แก้ไข</button>
+                    </td>
+                    <td>
+                        <button (click)="deleteProject(project.project_id)" class="btn btn-danger">ลบ</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal สำหรับการแก้ไขโครงการ -->
+        <div *ngIf="isModalOpen" class="modal">
+            <div class="modal-content">
+                <span (click)="isModalOpen = false" class="close">&times;</span>
+                <h2>แก้ไขข้อมูลโครงการ</h2>
+                <label for="project_name">ชื่อโครงการ:</label>
+                <input type="text" [(ngModel)]="selectedProject.project_name" id="project_name" />
+                <label for="total_booths">จำนวนบูธ:</label>
+                <input type="number" [(ngModel)]="selectedProject.total_booths" id="total_booths" />
+                <button (click)="updateProject(selectedProject)">บันทึก</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

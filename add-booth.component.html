@@ -1,0 +1,37 @@
+<h2 mat-dialog-title style="text-align: center; font-family: 'Itim', cursive; color: #000000;padding: 10px; font-size: 30px; text-shadow: 3px 3px 5px rgba(192, 118, 0, 0.7);">🎃เพิ่มบูธ🕯️</h2>
+<form>
+  <div class="form-group">
+    <label for="booth_code">รหัสบูธ:</label>
+    <input type="text" id="booth_code" [(ngModel)]="booth_code" name="booth_code" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="booth_name">ชื่อบูธ:</label>
+    <input type="text" id="booth_name" [(ngModel)]="booth_name" name="booth_name" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="size">ขนาดบูธ (กว้าง x ยาว)(m):</label>
+    <input type="text" id="size" [(ngModel)]="size" name="size" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="booth_info">ข้อมูลบูธ (สินค้าที่ขาย):</label>
+    <textarea id="booth_info" [(ngModel)]="booth_info" name="booth_info" required class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="project_id">รหัสโซน:</label>
+    <input type="text" id="project_id" [(ngModel)]="project_id" name="project_id" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="price">ราคา:</label>
+    <input type="number" id="price" [(ngModel)]="price" name="price" required class="form-control">
+  </div>
+
+  <div style="text-align: center;">
+    <button mat-button (click)="addBooth()" style="text-align: center; font-family: 'Itim', cursive;">เพิ่มบูธ</button>
+    <button mat-button (click)="cancel()" style="text-align: center; font-family: 'Itim', cursive;">ยกเลิก</button>
+  </div>
+</form>

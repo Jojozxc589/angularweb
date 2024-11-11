@@ -1,0 +1,132 @@
+$halloween-orange: #ff6b01;
+$dark-purple: #2c1810;
+$ghost-white: #f8f8ff;
+$pumpkin-brown: #8B4513;
+
+body {
+    background-color: #ad6200; /* สีพื้นหลังสำหรับทั้งหน้า */
+    min-height: 100vh; /* ใช้ 100vh เพื่อให้ครอบคลุมความสูงของ viewport */
+    margin: 0; /* ลบ margin ของ body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit-event-form {
+  background: linear-gradient(135deg, $dark-purple, darken($halloween-orange, 25%));
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 2rem auto;
+  
+  .spooky-title {
+    color: $halloween-orange;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Creepster', cursive;
+    animation: floatingGhost 3s ease-in-out infinite;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    color: $ghost-white;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1.1rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid $halloween-orange;
+    border-radius: 8px;
+    background-color: rgba($ghost-white, 0.9);
+    color: $dark-purple;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: lighten($halloween-orange, 10%);
+      box-shadow: 0 0 10px rgba($halloween-orange, 0.5);
+    }
+
+    &:disabled {
+      background-color: rgba($ghost-white, 0.6);
+      border-color: $pumpkin-brown;
+      cursor: not-allowed;
+    }
+  }
+
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+
+    button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+
+      &.submit-btn {
+        background-color: $halloween-orange;
+        color: $ghost-white;
+        
+        &:hover {
+          background-color: darken($halloween-orange, 10%);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba($halloween-orange, 0.4);
+        }
+      }
+
+      &.cancel-btn {
+        background-color: transparent;
+        color: $ghost-white;
+        border: 2px solid $ghost-white;
+        
+        &:hover {
+          background-color: rgba($ghost-white, 0.1);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+@keyframes floatingGhost {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .edit-event-form {
+    margin: 1rem;
+    padding: 1.5rem;
+
+    .button-group {
+      flex-direction: column;
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

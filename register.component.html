@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<body>
+  <div>
+    <button (click)="goBack()" class="btn-1">
+      <div class="original">ย้อนกลับ</div>
+      <div class="letters">
+        <span>ย้</span>
+        <span>อ</span>
+        <span>น</span>
+        <span>ก</span>
+        <span>ลั</span>
+        <span>บ</span>
+      </div>
+    </button>
+  </div>
+<div class="register-container">
+    <h2 class="register-title">✎ Register ✉︎</h2>
+    <form (ngSubmit)="onSubmit()" class="register-form">
+      <div class="input-group">
+        <label>คำนำหน้า:</label>
+        <select [(ngModel)]="prefix" name="prefix" required class="input-field">
+          <option value="Mr">นาย</option>
+          <option value="Mrs">นาง</option>
+          <option value="Ms">นางสาว</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>ชื่อ:</label>
+        <input type="text" [(ngModel)]="firstName" name="firstName" required class="input-field">
+      </div>
+      <div class="input-group">
+        <label>นามสกุล:</label>
+        <input type="text" [(ngModel)]="lastName" name="lastName" required class="input-field">
+      </div>
+  
+      <div class="input-group">
+        <label>เบอร์โทรศัพท์:</label>
+        <input type="tel" [(ngModel)]="phone" name="phone" required class="input-field">
+      </div>
+  
+      <div class="input-group">
+        <label>อีเมล:</label>
+        <input type="email" [(ngModel)]="email" name="email" required class="input-field">
+      </div>
+  
+      <div class="input-group">
+        <label>รหัสผ่าน:</label>
+        <input type="password" [(ngModel)]="password" name="password" required class="input-field">
+      </div>
+  
+      <button type="submit" class="register-button">สมัครสมาชิก</button>
+    </form>
+  
+    <!-- ป๊อบอัพสำหรับแสดงข้อความแจ้งเตือน -->
+    <div id="popup" class="popup" *ngIf="showPopup">
+      <div class="popup-content">
+        <span class="close" (click)="closePopup()">&times;</span>
+        <p class="error-message">{{ errorMessage }}</p>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
